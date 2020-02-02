@@ -12,3 +12,10 @@
 
 *  [Merge K-Face dataset]
 *  [Making tfrecord_file]
+
+
+
+
+## reference
+* [ArcFace](https://arxiv.org/abs/1801.07698)
+* [arcface-tf2](https://github.com/peteryuX/arcface-tf2)
