@@ -8,9 +8,9 @@
 
 ## data preprocessing
 
-#### 1. [Select K-Face dataset]()
+#### 1. [Select K-Face dataset](https://github.com/shiney5213/Project-Arcface/blob/master/1. Select K-face dataset and split train and test.ipynb)
 - 한 사람당 image가  32,400장으로 너무 많아 L1(조명-ㅣLux1000), S001(액세서리-보통), E01~E03(표정) 데이터만 사용하기로 함(1인당 train 40, test 20)
-#### 2. [face_recognition]()
+#### 2. [face_recognition](https://github.com/shiney5213/Project-Arcface/blob/master/2. face_recognition_align_112.ipynb)
 - ms1m_align_112 데이터가 가로,세로 모두 112pixel로 얼굴만 detection한 이미지이므로 k-face 데이터셋도 얼굴만 detection하여 저장함
 	
   <img src="images/compare_dataset.png" alt="compare datasets" style="zoom:48%;" />
