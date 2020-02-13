@@ -1,7 +1,6 @@
 # dataset
 data/
 train/
-test/
 val/
 
 # Byte-compiled / optimized / DLL files
