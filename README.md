@@ -43,7 +43,7 @@
 - 모두  86,142폴더, 5,872,144장 이미지 준비  ㅋ
 
 ## train/test
-#### 1. [first_train](https://github.com/shiney5213/Project-Arcface/blob/master/training/1.train_1.py)
+#### 1. [first_train](https://github.com/shiney5213/Project-Arcface/blob/master/training/1.train_1.py) : 참고한 [ArcFace](https://github.com/peteryuX/arcface-tf2#Training-and-Testing)의 모델의 구조 , 하이퍼 파라미터  등을 그대로 학습
 
 |  general | | train pram  | | test pram | |
 | ---------- | -------- | ---------- | -------- | ---------- | ------- |
