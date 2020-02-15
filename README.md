@@ -43,6 +43,7 @@
 - 모두  86,142폴더, 5,872,144장 이미지 준비  
 
 #### 6. [test data]() : [arcface-tf2](https://github.com/peteryuX/arcface-tf2)ㅇㅔㅅㅓ ㅅㅏㅇㅛㅇㅎㅏㄴ
+- [](https://github.com/deepinsight/insightface/issues/791)
 
 
 ## train/test
@@ -80,5 +81,6 @@
 
 
 ## reference
-* [ArcFace](https://arxiv.org/abs/1801.07698)
+* [ArcFace](https://arxiv.org/abs/1801.07698):
+* [InsightFace](https://github.com/deepinsight/insightface/) : 2D and 3D Face Analysis Project
 * [arcface-tf2](https://github.com/peteryuX/arcface-tf2)
