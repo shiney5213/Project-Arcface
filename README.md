@@ -93,6 +93,8 @@
 
 
 ## reference
-* [ArcFace](https://arxiv.org/abs/1801.07698):
+* [ArcFace](https://arxiv.org/abs/1801.07698): ArcFace Paper
 * [InsightFace](https://github.com/deepinsight/insightface/) : 2D and 3D Face Analysis Project
-* [arcface-tf2](https://github.com/peteryuX/arcface-tf2)
+* [arcface-tf2](https://github.com/peteryuX/arcface-tf2): InsightFace by tensorflow
+* [preparing_data](https://github.com/Talgin/preparing_data)
+* 
