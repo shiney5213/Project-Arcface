@@ -130,10 +130,11 @@ def main(_):
         model.compile(optimizer=optimizer, loss=loss_fn,
                       run_eagerly=(FLAGS.mode == 'eager_fit'))
 
-        mc_callback = ModelCheckpoint(
-            'checkpoints/' + cfg['sub_name'] + '/e_{epoch}_b_{batch}.ckpt',
-            save_freq=cfg['save_steps'] * cfg['batch_size'], verbose=1,
-            save_weights_only=True)
+        mc_callback = ModelCheckpoint('checkpoints/' + cfg['sub_name'] + '/e_{epoch}_b_{batch}.ckpt',
+										save_freq=cfg['save_steps'] * cfg['batch_size'],
+										verbose=1,
+										save_weights_only=True)
+										
         tb_callback = TensorBoard(log_dir='logs/',
                                   update_freq=cfg['batch_size'] * 5,
                                   profile_batch=0)
