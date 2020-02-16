@@ -42,7 +42,19 @@
 - **test시에는 더 성능이 좋은 face detection model을 사용해야겠음**
 - 모두  86,142폴더, 5,872,144장 이미지 준비  
 
-#### 6. [test data]() : [arcface-tf2](https://github.com/peteryuX/arcface-tf2)ㅇㅔㅅㅓ ㅅㅏㅇㅛㅇㅎㅏㄴ
+#### 6. [test data]() : K-face  test set 만들기 
+
+#### - [arcface-tf2](https://github.com/peteryuX/arcface-tf2) 에서 사용한  lwf, AgeDB, cfp dataset 과 함께 k-face을 사용하기 위해 K-face set도 다른 데이터셋과 같은 구조로 만듦.
+
+- train data와 같이 얼굴을 찾아 112 * 112로 조절
+- [file rename](): 파일 이름을 폴더명(사람 이름)_0001.jpeg로 rename
+- [k-face_pairs.txt 생성]: 같은 사람의 사진 pairs와 다른 사람의 사진 paris 를 표기한 txt 파일 생성
+- 
+- k_face.lst 파일 생성
+- k_face.rec, k_face.idx 파일 생성
+- k_face.bin 파일 생성
+- 위에서 만든  .rec, .idx, .bin 파일을 한 폴더에 정리하기
+
 - [](https://github.com/deepinsight/insightface/issues/791)
 
 
@@ -72,7 +84,7 @@
 | barch_size| 128| binary_img  | True | mode| fit |
 | input_size | 112| num_classes | 86,142  | loss | Softmax |
 | embd_size | 512| num_samples | 5,872,144  | data | acc|
-| sub_name | 'arc-res50'| epochs  | 5  |lfw |  0.9710 |
+| sub_name | 'arc-res50'| epochs  | 5  |lfw | 0.9705 |
 | back_bone | 'ResNet50'| base_lr  | 0.01  | AgeDB-30 | 0.8560|
 | head_type | ArcHead| w_decay  | float 5e-4  | CFP-FP | 0.8817 |
 | is_ccrop | False| save_steps | 1000  | k-face | 90  |
