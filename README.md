@@ -35,29 +35,52 @@
       </tr>
   </table>
 
-#### 5. [tfrecord file](https://github.com/shiney5213/Project-Arcface/blob/master/preprocessing/5.convert_train_binary_tfrecord.py) : tensorflow에서 빠르게  training 하기 위해 tfrecord 파일 만들기 
+#### 5. [trian data](https://github.com/shiney5213/Project-Arcface/blob/master/preprocessing/5.convert_train_binary_tfrecord.py) : tensorflow에서 빠르게  training 하기 위해 tfrecord 파일 만들기 
 <img src = 'images/tfrecord.png'  width = 100%>
 - slm_align_112 데이터:  85,742명, 5,822,653장
 - K-face 데이터 :  400명,  49,491장  (52,800장을 기대했으나 face detection하면서 이미지가 줄어듦.) 
 - **test시에는 더 성능이 좋은 face detection model을 사용해야겠음**
-- 모두  86,142폴더, 5,872,144장 이미지 준비  ㅋ
+- 모두  86,142폴더, 5,872,144장 이미지 준비  
+
+#### 6. [test data]() : [arcface-tf2](https://github.com/peteryuX/arcface-tf2)ㅇㅔㅅㅓ ㅅㅏㅇㅛㅇㅎㅏㄴ
+- [](https://github.com/deepinsight/insightface/issues/791)
+
 
 ## train/test
-#### 1. [first_train](https://github.com/shiney5213/Project-Arcface/blob/master/training/1.train_1.py) : 참고한 [ArcFace](https://github.com/peteryuX/arcface-tf2#Training-and-Testing)의 모델의 구조 , 하이퍼 파라미터  등을 그대로 학습
+
+#### 0. [ordinary_train] : k-face datasetㅇㅡㄹ ㅊㅜㄱㅏㅎㅏㄱㅣ ㅈㅓㄴㅇㅔ 
+<img src = 'images/2.train_0_test_result.jpg'  width = 100%>
+
+|  general | | train pram  | | test pram | |
+| ---------- | -------- | ---------- | -------- | ---------- | ------- |
+| barch_size| 128| binary_img  | True | mode| fit |
+| input_size | 112| num_classes | 85,742  | loss | Softmax |
+| embd_size | 512| num_samples | 5,822,653  | data | acc |
+| sub_name | 'arc-res50'| epochs  | 5  |lfw | 0.9710 |
+| back_bone | 'ResNet50'| base_lr  | 0.01  | AgeDB-30 | 0.8520 |
+| head_type | ArcHead| w_decay  | float 5e-4  | CFP-FP | 0.8757 |
+| is_ccrop | False| save_steps | 1000  | k-face | None  |
+
+
+#### 1. [first_train](https://github.com/shiney5213/Project-Arcface/blob/master/training/1.train_1.py) 
+- 참고한 [ArcFace](https://github.com/peteryuX/arcface-tf2#Training-and-Testing)의 모델의 구조 , 하이퍼 파라미터  등을 그대로 학습
+-K-face 데이터 :  400명,  49,491장ㅇㅡㄹ ㅊㅜㄱㅏㅎㅏㅇㅕ ㅎㅏㄱㅅㅡㅂ
+<img src = 'images/2.train_1_test_result.jpg'  width = 100%>
 
 |  general | | train pram  | | test pram | |
 | ---------- | -------- | ---------- | -------- | ---------- | ------- |
 | barch_size| 128| binary_img  | True | mode| fit |
 | input_size | 112| num_classes | 86,142  | loss | Softmax |
-| embd_size | 512| num_samples | 5,872,144  | lfw | 90|
-| sub_name | 'arc-res50'| epochs  | 5  |AgeDB-30 |  90 |
-| back_bone | 'ResNet50'| base_lr  | 0.01  | k-face | 90|
-| head_type | ArcHead| w_decay  | float 5e-4  | CFP-FP | 90 |
+| embd_size | 512| num_samples | 5,872,144  | data | acc|
+| sub_name | 'arc-res50'| epochs  | 5  |lfw |  0.9710 |
+| back_bone | 'ResNet50'| base_lr  | 0.01  | AgeDB-30 | 0.8560|
+| head_type | ArcHead| w_decay  | float 5e-4  | CFP-FP | 0.8817 |
 | is_ccrop | False| save_steps | 1000  | k-face | 90  |
 
 
 
 
 ## reference
-* [ArcFace](https://arxiv.org/abs/1801.07698)
+* [ArcFace](https://arxiv.org/abs/1801.07698):
+* [InsightFace](https://github.com/deepinsight/insightface/) : 2D and 3D Face Analysis Project
 * [arcface-tf2](https://github.com/peteryuX/arcface-tf2)
