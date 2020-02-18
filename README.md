@@ -49,12 +49,12 @@
 - train data와 같이 얼굴을 찾아 112 * 112로 조절
 - [file rename](): 파일 이름을 폴더명(사람 이름)_0001.jpeg로 rename
 - [k-face_pairs.txt 생성]: 같은 사람의 사진 pairs와 다른 사람의 사진 paris 를 표기한 txt 파일 생성
+- [k-face.bin 생성 ](https://github.com/shiney5213/Project-Arcface/blob/master/preprocessing/8.make_kface_bin.py) : kface_prairs.txt 파일을 가지고 kface.bin 파일 생성
 - 
 - k_face.lst 파일 생성
 - k_face.rec, k_face.idx 파일 생성
 - k_face.bin 파일 생성
 - 위에서 만든  .rec, .idx, .bin 파일을 한 폴더에 정리하기
-
 - [](https://github.com/deepinsight/insightface/issues/791)
 
 
