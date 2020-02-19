@@ -60,7 +60,7 @@
 
 ## train/test
 
-#### 0. [ordinary_train] : k-face datasetㅇㅡㄹ ㅊㅜㄱㅏㅎㅏㄱㅣ ㅈㅓㄴㅇㅔ 
+#### 0. [ordinary_train] : k-face dataset을 추가하기 전의 학습
 <img src = 'images/2.train_0_test_result.jpg'  width = 100%>
 
 |  general | | train pram  | | test pram | |
@@ -75,8 +75,8 @@
 
 
 #### 1. [first_train](https://github.com/shiney5213/Project-Arcface/blob/master/training/1.train_1.py) 
-- 참고한 [ArcFace](https://github.com/peteryuX/arcface-tf2#Training-and-Testing)의 모델의 구조 , 하이퍼 파라미터  등을 그대로 학습
--K-face 데이터 :  400명,  49,491장ㅇㅡㄹ ㅊㅜㄱㅏㅎㅏㅇㅕ ㅎㅏㄱㅅㅡㅂ
+- 모델 : 참고한 [ArcFace](https://github.com/peteryuX/arcface-tf2#Training-and-Testing)의 모델의 구조 , 하이퍼 파라미터  등을 그대로 학습
+- 데이터: Ms1m data + K-face data :  400명,  49,491장을 추가하여 학습
 <img src = 'images/2.train_1_test_result.jpg'  width = 100%>
 
 |  general | | train pram  | | test pram | |
@@ -87,7 +87,7 @@
 | sub_name | 'arc-res50'| epochs  | 5  |lfw | 0.9705 |
 | back_bone | 'ResNet50'| base_lr  | 0.01  | AgeDB-30 | 0.8560|
 | head_type | ArcHead| w_decay  | float 5e-4  | CFP-FP | 0.8817 |
-| is_ccrop | False| save_steps | 1000  | k-face | 90  |
+| is_ccrop | False| save_steps | 1000  | k-face | 0.5652 |
 
 
 
