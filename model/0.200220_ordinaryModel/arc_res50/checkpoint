@@ -1,0 +1,2 @@
+model_checkpoint_path: "e_8_b_40000.ckpt"
+all_model_checkpoint_paths: "e_8_b_40000.ckpt"
