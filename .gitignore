@@ -2,7 +2,8 @@
 data/
 train/
 val/
-
+ordinary/
+reference/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
