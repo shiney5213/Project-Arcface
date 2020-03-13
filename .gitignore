@@ -10,6 +10,7 @@ reference/
 *.data-00000-of-00002
 *.data-00001-of-00002
 *.yaml
+*.index
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
