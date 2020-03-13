@@ -8,6 +8,8 @@ reference/
 *.ckpt
 *.h5
 *.data-00000-of-00002
+*.data-00001-of-00002
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
