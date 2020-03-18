@@ -5,6 +5,7 @@ val/
 ordinary data/
 ordinary/
 reference/
+picture/
 
 *.ckpt
 *.h5
