@@ -7,25 +7,27 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 
-old_dir = '../data/ordinary/lfw_10'
-new_dir = '../data/ordinary/lfw_align_112'
+old_dir_path = '../celebrity'
+new_dir_path = '../asian_align_112'
 
-old_dir_list = os.listdir(old_dir)
+old_dir_list = os.listdir(old_dir_path)
 
 detector = MTCNN()
-for root, dirs, files in os.walk(old_dir):
-#     print(dirs)
-    people_name = os.path.split(root)[1]
-    print(people_name)
-    new_people_dir = os.path.join(new_dir, people_name)
+for i , people_name in enumerate(old_dir_list):
+    print(i, people_name)
+    new_people_dir = os.path.join(new_dir_path, str(i+90000))
+#     print(new_people_dir)
     try:
         os.mkdir(new_people_dir)
     except Exception as err:
-        print(err)
+        pass
         
-    for i, file in enumerate(files):
-        input_image_path = os.path.join(root, file)
-        original_image = cv2.imread(input_image_path, 1)
+    people_path = os.path.join(old_dir_path, people_name)
+    old_file_list = os.listdir(people_path)
+    for j, file in enumerate(old_file_list):
+        old_file_path = os.path.join(people_path, file)
+        
+        original_image = cv2.imread(old_file_path, 1)
         if original_image is not None:
             original_image= cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB)
             copy_image = original_image
@@ -45,8 +47,7 @@ for root, dirs, files in os.walk(old_dir):
                 
                     
                 crop_image = copy_image[top:bottom, left:right]
-                # imshow('', crop_image)                
                 resize_image = cv2.resize(crop_image, dsize=(112,112), interpolation = cv2.INTER_AREA)
                 resize_image = cv2.cvtColor(resize_image, cv2.COLOR_RGB2BGR)
-                save_path = f"{new_dir}/{people_name}/{file}"
+                save_path = f"{new_dir_path}/{i+90000}/{90000+i}0{j}.jpg"
                 cv2.imwrite(save_path, resize_image)
